@@ -5,10 +5,10 @@
 		<title>Hestin</title>
 		<link rel="icon" href="img/icon.ico"/>
 		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-		<link rel="stylesheet" href="css/snow.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
 		<script src="https://blog.hlzyw.cn/style/js/jquery-1.8.3.min.js"></script>
 		<script src="http://www.lmlblog.com/winter/templets/xq/js/snowy.js"></script>
-		<script src="http://www.lmlblog.com/blog/12/js/Snow.js"></script>
+		<script src="http://www.lmlblog.com/blog/14/js/Snow.js"></script>
 		<script type="text/javascript">
 		     /* 鼠标点击特效 */
 		 
@@ -18,7 +18,7 @@
 		            var a = new Array(
 		                "蔡蔡❤", "❤", "UU❤", "❤", "糖糖❤", "舟舟", "我的世界", "开心", "快乐",
 		                 "善良", "可爱", "Minecraft", "❤",  "mua~", "宝宝❤",  "Happy every day",
-		                 "Hestin" ,"悠悠", "Little_H_A", "Yao_Tang", "unusuallman", "clx~","hyz~"
+		                 "Hestin" ,"悠悠", "Little_H_A", "Yao_Tang", "unusuallman", "clx~","hyz~","wjh~"
 		                 );
 		            var color1 = Math.floor((Math.random() * 255));
 		            var color2 = Math.floor((Math.random() * 255));
@@ -33,7 +33,7 @@
 		                "top": y - 20,
 		                "left": x,
 		                "position": "absolute",
-		                "font-family":"comic sans ms",
+		                "font-family":"chinese-steel",
 		                "fontSize":Math.floor((Math.random() * 22)+15),
 		                "font-weight": "bold",
 		                "color": "rgb("+color1+","+color2+","+color3+")",
@@ -137,21 +137,23 @@
 	.leftcolumn {   
 	  float: left;
 	  width: 70%;
+	  background-color: #e3e8f5;
 	}
 	
 	.rightcolumn { /* 右侧栏 */
 	  float: right;
 	  width: 20%;
-	  background-color: #f8faff;
+	  background-color: #e3e8f5;
 	}
 	/* 文章卡片效果 */
 	.card {
-	  background-color: #FFFFFF;
+	  background-color: #d6dce8;
 	  padding: 20px;
 	  margin-top: 50px;
-	  box-shadow: 10px 10px 5px grey;
+	  box-shadow: 3px 60px 5px #c6cad9;
 	  -webkit-transition-duration: 0.4s;
 	  border-radius: 10px;
+	  opacity: 0.5;
 	}
 
 	/* 底部*/
@@ -195,25 +197,57 @@
 	  content: '»';
 	  position: absolute;
 	  top: 0;
+	  opacity: 0;
 	  right: -20px;
 	  transition: 0.5s;
-	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 	}
 	.button:hover span:after {
 	  opacity: 1;
-	  right: 0;
-	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-	  
+	  right: 0;  
 	}
 	.button:hover span {
 	  padding-right: 25px;
-	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 	}
-	
+	@font-face {
+		font-family:chinese-steel;
+		src: url(font/chinese-steel.ttf);
+	}
+    .button1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.6s; /* Safari */
+    transition-duration: 0.6s;
+    cursor: pointer;
+}
+
+    .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #d70005;
+}
+
+    .button1:hover {
+    background-image: linear-gradient(#d70005,#9b0304);
+    color: white;
+}
 	</style>
-	<body>
+	<body style="background-color: #e3e8f5;">
+		<div class="loadingOne">
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		</div>
 		<div class="snow-container"></div>
-		
+
         <ul>
           <li><a href="#home" style="color: #797f81;font-weight: bolder;">Minecraft Server--Hestin</a></li>
           <li><a href="#news" style="color: #797f81;font-weight: bold;">赞助</a></li>
@@ -233,9 +267,11 @@
 		font-size: 5em;
 		opacity: 0.4;"
 		>Welcome to Hestin!</h1>
-		<h2 style="font-family: 娃娃体">A Minecraft Server</h2>
-		<a href="https://jq.qq.com/?_wv=1027&k=n12EUXg2" target="_blank"><button class="button" style="vertical-align:middle;color: #a19b61;font-family: ;" ><span>加入我们! </span></button></a>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<h2 style="font-family: chinese-steel">A Minecraft Server</h2>
+		<br><br><br><br><br><br>
+		<a href="https://jq.qq.com/?_wv=1027&k=n12EUXg2" target="_blank"><button class="button" style="vertical-align:middle;color: #a19b61;font-family: chinese-steel;" ><span>加入我们! </span></button></a>
+		<a href="https://jq.qq.com/?_wv=1027&k=n12EUXg2" target="_blank"><button class="button1" style="vertical-align:middle;font-family: chinese-steel;" ><span>赞助一下! </span></button></a>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
 		
 		<div class="row">
 			<div class="leftcolumn">
@@ -259,7 +295,7 @@
 				      <div class="fakeimg"><p>图片</p></div>
 				      <div class="fakeimg"><p>图片</p></div>
 				</div>
-				<div class="card">
+				<div class="card" style="box-shadow: unset;">
 				      <h3>关注我</h3>
 				      <p>一些文本...</p>
 				    </div>
@@ -268,7 +304,7 @@
 		
 
 		
-		<div class="footer" style="background-color: #3c3c3c;">
+		<div class="footer" style="background-color: #2d3c4c;">
 			<h3>*将本作品用于非正当用途而造成的后果,责任与本作品无关.</h3>
 			<h3>Copyright © 2022 Hestin. All Rights Reserved. </h3>
 			 <foottxt><a href="https://github.com/xiaoH2333/hestin" target="_blank">改进本页面</a></foottxt>
