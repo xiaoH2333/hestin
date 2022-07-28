@@ -5,7 +5,10 @@
 		<title>Hestin</title>
 		<link rel="icon" href="img/icon.ico"/>
 		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" href="css/snow.css"/>
 		<script src="https://blog.hlzyw.cn/style/js/jquery-1.8.3.min.js"></script>
+		<script src="http://www.lmlblog.com/winter/templets/xq/js/snowy.js"></script>
+		<script src="http://www.lmlblog.com/blog/12/js/Snow.js"></script>
 		<script type="text/javascript">
 		     /* 鼠标点击特效 */
 		 
@@ -54,7 +57,7 @@
 	
 	</head>
 	<style>
-	
+    .snow-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:100001;}
 	html {
 	 overflow-x:hidden; //隐藏水平滚动条
 	 overflow-y:hidden;//隐藏垂直滚动条
@@ -209,8 +212,8 @@
 	
 	</style>
 	<body>
+		<div class="snow-container"></div>
 		
-		</div>
         <ul>
           <li><a href="#home" style="color: #797f81;font-weight: bolder;">Minecraft Server--Hestin</a></li>
           <li><a href="#news" style="color: #797f81;font-weight: bold;">赞助</a></li>
