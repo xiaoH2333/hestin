@@ -57,24 +57,81 @@
 	
 	</head>
 	<style>
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+ 
+        .slipNav {
+			position: absolute;
+            width: 100%;
+            margin: 0px auto;
+			
+        }
+ 
+        .slipNav a {
+            position: relative;
+            float: left;
+            width: 150px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 18px;
+            color: #000;
+            z-index: 1;
+			
+        }
+ 
+        .slipNav nav {
+            position: relative;
+            background-image: linear-gradient(to left,#8efbfd,#ffd7f9);
+            opacity: 0.8;
+			position: fixed;
+			box-shadow: 5px 5px 5px grey;
+			width: 100%;
+        }
+ 
+        .slipNav nav::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+ 
+        .slipNav nav :hover {
+            background-image: linear-gradient(to left,#f791fe,#e5ff90);
+        }
+ 
+        .selected {
+            color: white !important;
+        }
+ 
+        .line {
+            position: absolute;
+            top: 50px;
+            left: 35px;
+            /* 线的长宽 */
+            height: 3px;
+            width: 80px;
+            background-color: #000000;
+            transition: all .3s;
+        }
+ 
+        .bgc {/*选中后样式 */
+            position: absolute;
+            top: 0px;
+            left: 25px;
+            /* 线的长宽 */
+            height: 50px;
+            width: 100px;
+            border-radius: 50px;
+            background-image: linear-gradient(to left,#8efbfd,#ffd7f9);
+            transition: all .3s;
+        }
     .snow-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:100001;}
 	html {
 	 overflow-x:hidden; //隐藏水平滚动条
 	 overflow-y:hidden;//隐藏垂直滚动条
 	 }
-	ul {
-	    list-style-type: none;
-	    margin: 0;
-	    padding: 0;
-	    overflow: hidden;
-		top: 0;
-		width: 100%;
-		opacity: 0.9;
-		background-image: linear-gradient(to left,#8efbfd,#ffd7f9);
-		box-shadow: 3px 3px 3px grey;
-		border-radius: 10px;
-		position: fixed;
-	}
+
 	foottxt a {
 	        /* 设置链接内容显示的格式*/
 	        display: block;
@@ -91,23 +148,7 @@
 	    color: rgb(0, 148, 255);
 	    -webkit-animation: scaleDraw 5s ease-in-out infinite;
 	}
-	li {
-	    float: left;
-	}
-	 
-	li a {
-	    display: block;
-	    color: white;
-	    text-align: center;
-	    padding: 20px 40px;
-	    text-decoration: none;
-	}
-	
-	li a:hover {
-	    background-color: #2a9c8e;
-		-webkit-transition: 0.5s;
-		transition: 1.0s;
-	}
+
 	
 	body
 	{
@@ -197,15 +238,17 @@
 	  content: '»';
 	  position: absolute;
 	  top: 0;
-
 	  right: -20px;
 	  transition: 0.5s;
+	  opacity: 0;
 	}
 	.button:hover span:after {
-	  right: 0;  
+	  right: 0;
+	  opacity: 1;
 	}
 	.button:hover span {
 	  padding-right: 25px;
+	  
 	}
 	@font-face {
 		font-family:chinese-steel;
@@ -214,21 +257,23 @@
 
 
     .button1 {
-    
-	background-image: linear-gradient(#d70005,#9b0304);
+	background: linear-gradient(
+	            135deg,
+	            RGB(233, 76, 70) 0%,
+	            RGB(185, 29, 71) 100%
+	          );
     color: black; 
 	border-radius: 25px;
 }
 
     .button1:hover {
     background-color: white; 
-	border: 2px solid #d70005;
     color: white;
 	border-radius: 25px;
 }
    .title{
 	   width: 100%;
-	   height: 800px;
+	   height: 900px;
 	   text-align: center;
 	   margin: 20px;
 	   margin: 0 auto;
@@ -238,21 +283,22 @@
 	</style>
 	
 	<body style="background-color: #e3e8f5;">
-		<div class="loadingOne">
-		    <span></span>
-		    <span></span>
-		    <span></span>
-		    <span></span>
-		    <span></span>
-		</div>
 		<div class="snow-container"></div>
+        <div class="slipNav">
+                <nav>
+                    <a href="javascript:;" class="selected" style="font-family: chinese-steel;">首页</a>
+                    <a href="javascript:;" style="font-family: chinese-steel;">我的</a>
+                    <a href="javascript:;" style="font-family: chinese-steel;">联系</a>
+                    <a href="javascript:;" style="font-family: chinese-steel;">关于</a>
+                    <a href="javascript:;" style="font-family: chinese-steel;">赞助</a>
+					<a href="javascript:;" style="font-family: chinese-steel;">相册</a>
+                    <!-- 底部线条 -->
+                    <div class="line"></div>
+                    <!-- 背景滑块 -->
+                    <div class="bgc"></div>
+                </nav>
+            </div>
 
-        <ul>
-          <li><a class="active" href="#home" style=" color: #797f81;font-weight: bolder;"><i class="fa fa-home"></i></a></li>
-          <li><a href="#news" style="color: #797f81;font-weight: bold;">赞助</a></li>
-          <li><a href="#contact" style="color: #797f81;font-weight: bold;">联系</a></li>
-          <li style="float: right"><a href="#about" style="color: #797f81;font-weight: bold;">关于</a></li>
-        </ul>
 		<div class="title">
 		<br><br><br><br><br><br><br><br>
 		<h1 style="color: #000000;
@@ -264,13 +310,18 @@
 		<a href="https://www.minecraft.net"><img style="height: 70px; width: 70px;" src="img/glassblock.png"></a>
 		<h2 style="font-family: chinese-steel">A Minecraft Server</h2>
 		<br><br><br><br><br><br>
-		<a href="https://jq.qq.com/?_wv=1027&k=n12EUXg2" target="_blank"><button class="button" style="vertical-align:middle;color: #a19b61;font-family: chinese-steel;" ><span>加入我们! </span></button></a>
-		<a href="https://jq.qq.com/?_wv=1027&k=n12EUXg2" target="_blank"><button class="button button1" style="vertical-align:middle;font-family: chinese-steel;" ><span>赞助一下! </span></button></a>
-		<br><br><br><br><br><br>
+		<a href="https://jq.qq.com/?_wv=1027&k=n12EUXg2" target="_blank"><button class="button" style="vertical-align:middle;
+		background-image: linear-gradient(to right,#fdccf8,#d6daf9);
+		font-family: chinese-steel;
+		opacity: 0.6;" ><span>加入我们! </span></button></a>
+		
+		<a href="https://jq.qq.com/?_wv=1027&k=n12EUXg2" target="_blank"><button class="button button1" style="opacity: 0.8;
+		 background-image: linear-gradient(to right,#bee4fa,#80fdfe);;vertical-align:middle;font-family: chinese-steel;" ><span>赞助一下! </span></button></a>
+		<br><br><br><br><br><br><br>
 		
 		<div class="row">
 			<div class="leftcolumn">
-				<div class="card">
+				<div class="card" style="margin-top: 30px;">
 					<h2>网站还在建设哈（才两天前开始写awa)</h2>
 					      <h5>2022 年 7 月 27日</h5>
 					      <div class="fakeimg" style="height:100px;">图片</div>
@@ -304,6 +355,39 @@
 			<h3>Copyright © 2022 Hestin. All Rights Reserved. </h3>
 			 <foottxt><a href="https://github.com/xiaoH2333/hestin" target="_blank">改进本页面</a></foottxt>
 		</div>
+		<script>
+		        let line = document.querySelector('.line');
+		        let slipNav = document.querySelector('.slipNav nav');
+		        let slipAll = document.querySelectorAll('.slipNav nav a');
+		        //给所有的a标签添加index属性，方便后面查找
+		        for (let i = 0; i < slipAll.length; i++) {
+		            slipAll[i].setAttribute('data-index', i)
+		        }
+		        //鼠标移入底下的线跟着移动
+		        slipNav.addEventListener('mouseover', function (e) {
+		            let target = e.target
+		            let len = 150 * target.dataset.index + 35;// 计算当前的left值
+		            line.style.left = len + 'px';
+		        })
+		        //鼠标移出时底下的线回到原来的位置
+		        slipNav.addEventListener('mouseleave', function (e) {
+		            let selected = document.querySelector('.slipNav .selected')
+		            let len = 150 * selected.dataset.index + 35 // 线回到被选择元素的位置
+		            line.style.left = len + 'px'
+		        })
+		        //鼠标点击时背景颜色的滑块滑倒相应的位置
+		        slipNav.addEventListener('click', function (e) {
+		            let target = e.target;
+		            let bgc = document.querySelector('.bgc')
+		            //排他思想
+		            for (let i = 0; i < slipAll.length; i++) {
+		                slipAll[i].classList.remove('selected')
+		            }
+		            target.classList.add('selected');// 通过添加类名实现颜色变化
+		            let len = 150 * target.dataset.index + 25 // 计算背景滑块left值
+		            bgc.style.left = len + 'px';
+		        })
+		    </script>
 	</body>
 	<footer>
 		<script src="https://files.cnblogs.com/files/wkfvawl/mouse-click.js"></script>
